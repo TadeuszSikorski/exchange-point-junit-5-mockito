@@ -14,7 +14,7 @@ public class CurrencyExchange {
     private BigDecimal spread;
     private ExchangeRatesProvider exchangeRatesProvider;
 
-    CurrencyExchange(BigDecimal spread, ExchangeRatesProvider exchangeRatesProvider) {
+    public CurrencyExchange(BigDecimal spread, ExchangeRatesProvider exchangeRatesProvider) {
         if (spread.compareTo(new BigDecimal(0)) == 0 || spread.compareTo(new BigDecimal(0)) == -1
         || spread.compareTo(new BigDecimal(1)) == 0 || spread.compareTo(new BigDecimal(1)) == 1) {
             throw new IllegalArgumentException("Spread must be greater than zero and less than one.");
@@ -24,8 +24,7 @@ public class CurrencyExchange {
         this.exchangeRatesProvider = exchangeRatesProvider;
     }
 
-    BigDecimal getBidPrice(BigDecimal amountOfMoney, CurrencyCode fromCurrency, CurrencyCode toCurrency) 
-        throws IOException {
+    public BigDecimal getBidPrice(BigDecimal amountOfMoney, CurrencyCode fromCurrency, CurrencyCode toCurrency) {
         if (amountOfMoney.compareTo(new BigDecimal(0)) == 0 || amountOfMoney.compareTo(new BigDecimal(0)) == -1) {
             throw new IllegalArgumentException("Amount of money must be greater than zero.");
         }
@@ -35,8 +34,7 @@ public class CurrencyExchange {
         return amountOfMoney.multiply(bid).setScale(SCALE, ROUNDING_MODE);
     }
 
-    BigDecimal getAskPrice(BigDecimal amountOfMoney, CurrencyCode fromCurrency, CurrencyCode toCurrency) 
-        throws IOException {
+    public BigDecimal getAskPrice(BigDecimal amountOfMoney, CurrencyCode fromCurrency, CurrencyCode toCurrency) {
         if (amountOfMoney.compareTo(new BigDecimal(0)) == 0 || amountOfMoney.compareTo(new BigDecimal(0)) == -1) {
             throw new IllegalArgumentException("Amount of money must be greater than zero.");
         }

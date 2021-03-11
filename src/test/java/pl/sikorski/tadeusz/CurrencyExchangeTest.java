@@ -96,7 +96,7 @@ public class CurrencyExchangeTest {
     }
 
     @Test
-    void bidPriceForSpecifiedSpreadEURtoPLN() throws IOException {
+    void bidPriceForSpecifiedSpreadEURtoPLN() {
         when(exchangeRatesProvider.getExchangeRate(CurrencyCode.EUR, CurrencyCode.PLN)).thenReturn(new BigDecimal("4.5540"));
         CurrencyExchange currencyExchange = new CurrencyExchange(new BigDecimal("0.0200"), exchangeRatesProvider);
 
@@ -104,7 +104,7 @@ public class CurrencyExchangeTest {
     }
 
     @Test
-    void askPriceForSpecifiedSpreadEURtoPLN() throws IOException {
+    void askPriceForSpecifiedSpreadEURtoPLN() {
         when(exchangeRatesProvider.getExchangeRate(CurrencyCode.EUR, CurrencyCode.PLN)).thenReturn(new BigDecimal("4.5540"));
         CurrencyExchange currencyExchange = new CurrencyExchange(new BigDecimal("0.0200"), exchangeRatesProvider);
 
@@ -112,7 +112,7 @@ public class CurrencyExchangeTest {
     }
 
     @Test
-    void bidPriceForSpecifiedSpreadPLNtoEUR() throws IOException {
+    void bidPriceForSpecifiedSpreadPLNtoEUR() {
         when(exchangeRatesProvider.getExchangeRate(CurrencyCode.PLN, CurrencyCode.EUR)).thenReturn(new BigDecimal("0.2196"));
         CurrencyExchange currencyExchange = new CurrencyExchange(new BigDecimal("0.0200"), exchangeRatesProvider);
 
@@ -120,7 +120,7 @@ public class CurrencyExchangeTest {
     }
 
     @Test
-    void askPriceForSpecifiedSpreadPLNtoEUR() throws IOException {
+    void askPriceForSpecifiedSpreadPLNtoEUR() {
         when(exchangeRatesProvider.getExchangeRate(CurrencyCode.PLN, CurrencyCode.EUR)).thenReturn(new BigDecimal("0.2196"));
         CurrencyExchange currencyExchange = new CurrencyExchange(new BigDecimal("0.0200"), exchangeRatesProvider);
 
